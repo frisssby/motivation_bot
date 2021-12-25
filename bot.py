@@ -1,6 +1,7 @@
 """Telegram bot that sends motavational quotes"""
 
 import os
+import requests
 import telebot
 
 bot = telebot.TeleBot(os.environ.get('TOKEN'))
@@ -12,7 +13,12 @@ def send_welcome(message):
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
-    """"Echo the message"""
-    bot.reply_to(message, message.text)
+    """"Get the quote and send it to user"""
+    response = requests.get("https://nodejs-quoteapp.herokuapp.com/quote")
+    if response:
+        bot.send_message(message.chat.id, response.json().get("quote"))
+    else:
+        bot.send_message(message.chat.id, "Something went wrong. Please, try again later.")
+    
 
 bot.infinity_polling()
