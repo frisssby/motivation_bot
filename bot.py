@@ -19,5 +19,5 @@ def echo_all(message):
         bot.send_message(message.chat.id, response.json().get("quote"))
     else:
         bot.send_message(message.chat.id, "Something went wrong. Please, try again later.")
-        
+
 bot.infinity_polling()
