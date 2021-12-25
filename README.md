@@ -8,4 +8,4 @@ It can send you a motivational quote if you ask for.
 
 Works on a virtual machine from DigitalOcean.
 
-Used WatchTower to automatically launch bot.
+Uses WatchTower to automatically launch bot.
