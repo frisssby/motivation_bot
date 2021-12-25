@@ -15,4 +15,4 @@ def echo_all(message):
     """"Echo the message"""
     bot.reply_to(message, message.text)
 
-bot.infinity_polling()
+bot.infinity_polling();
