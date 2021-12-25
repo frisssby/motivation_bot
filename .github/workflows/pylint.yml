@@ -3,7 +3,8 @@ name: Pylint
 on: [push]
 
 jobs:
-  build:
+  linter:
+    name: run linter
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
