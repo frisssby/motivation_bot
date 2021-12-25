@@ -1,8 +1,9 @@
 name: Publish image
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - '*'
 
 jobs:
   publish:
@@ -13,7 +14,7 @@ jobs:
         uses: lewagon/wait-on-check-action@v1.0.0
         with:
           ref: ${{ github.event.push.head.sha || github.sha }}
-          check-name: 'Pylint'
+          check-name: 'Analysing the code with pylint'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 10
       - name: Check out the repo
