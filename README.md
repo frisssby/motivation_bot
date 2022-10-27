@@ -2,7 +2,7 @@
 
 Author: Elina Safarova
 
-You can find the bot at http://t.me/FirstRateMotivationBot
+You can find the bot at http://t.me/FirstRateMotivationBot (currently down)
 
 It can send you a motivational quote if you ask for.
 
